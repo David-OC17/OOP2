@@ -1,39 +1,7 @@
 #include<string>
 #include<iostream>
 
-class Fraction{
-    private:
-        int _numerator;
-        int _denominator;
-    
-    public:
-        Fraction(int numerator, int denominator);
-
-        Fraction();
-
-        void reduce();
-
-        //Getters
-        int get_numerator() const;
-        int get_denominator() const;
-        std::string get_fraction() const;
-
-        //Setters
-        void set_numerator(int numerator);
-        void set_denominator(int denominator);
-        
-
-        //Other methods
-        void set_fraction(int numerator, int denominator);
-
-        Fraction sum(Fraction fraction1, Fraction fraction2);
-
-        void check_double_negative();
-
-        void check_negative_denominator();
-
-        void check_zero_denominator();
-};
+#include "fractions.h"
 
 //Getters
 int Fraction::get_numerator() const{
@@ -104,6 +72,20 @@ Fraction Fraction::sum(Fraction fraction1, Fraction fraction2){
     return sum_of_fractions;
 };
 
+Fraction Fraction::mult(Fraction fraction1, Fraction fraction2){
+    Fraction mult_of_fractions;
+
+    int final_numerator = fraction1.get_numerator() * fraction2.get_numerator();
+    int final_denominator = fraction1.get_denominator() * fraction2.get_denominator();
+
+    mult_of_fractions.set_numerator(final_numerator);
+    mult_of_fractions.set_denominator(final_denominator);
+
+    mult_of_fractions.reduce();
+
+    return mult_of_fractions;
+};
+
 void Fraction::check_double_negative(){
     if(_numerator < 0 && _denominator < 0){
         _numerator *= -1;
@@ -123,21 +105,4 @@ void Fraction::check_zero_denominator(){
         std::cout << "Error: Denominator cannot be zero" << std::endl;
         exit(EXIT_FAILURE);
     }
-};
-
-//Main, showing an example of the use of the class and its methods
-int main(){
-    Fraction Fraction1(1, 780);
-    Fraction Fraction2(44, 2);
-
-    //Print the two fractions
-    std::cout << Fraction1.get_fraction() << std::endl;
-    std::cout << Fraction2.get_fraction() << std::endl;
-
-    //Print the sum of the two fractions
-    Fraction sum_fractions = Fraction1.sum(Fraction1, Fraction2); //Fraction1 + Fraction2, use any of the two objects for the addition
-
-    std::cout << sum_fractions.get_fraction() << std::endl;
-
-    return EXIT_SUCCESS;
 };
