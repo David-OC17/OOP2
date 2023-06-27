@@ -38,6 +38,8 @@ class Fraction{
         void check_negative_denominator();
 
         void check_zero_denominator();
+
+        void str_to_frac(std::string string);
 };
 
 #endif //FRACTIONS_H

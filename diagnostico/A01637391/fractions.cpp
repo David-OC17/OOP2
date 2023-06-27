@@ -1,5 +1,6 @@
 #include<string>
 #include<iostream>
+#include<sstream>
 
 #include "fractions.h"
 
@@ -106,3 +107,22 @@ void Fraction::check_zero_denominator(){
         exit(EXIT_FAILURE);
     }
 };
+/*
+void Fraction::str_to_frac(std::string string){
+    int counter = 0;
+
+    std::string number;
+    std::stringstream ss(string); //Converts the string into a stringstream, that getline() can split
+
+    while(std::getline(ss, number, '/')) {
+        if(counter==0){
+            std::cout << number << std::endl;
+            Fraction::set_numerator(number);
+        }else{
+            Fraction::set_denominator(number);
+        };
+    };
+
+    std::cout << "String converted and fraction set";
+};
+*/
