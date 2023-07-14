@@ -19,5 +19,5 @@ void Pelicula::setDirector(std::string director){
 
 void Pelicula::muestraDatos(){
     std::cout << "Director: " << director << std::endl;
-    Video::show_info();
+    Video::muestraDatos();
 }

@@ -9,7 +9,7 @@ class Video{
         Video();
         Video(std::string type, std::string name, std::string genre, int launch_year, int duration);
 
-        void show_info();
+        virtual void muestraDatos();
 
         //Getters y setters
         std::string get_type();

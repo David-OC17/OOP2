@@ -28,7 +28,7 @@ void Serie::setNum_temporadas(int num_temporadas){
 }
 
 void Serie::muestraDatos(){
-    Video::show_info();
+    Video::muestraDatos();
     std::cout << "Num episodios: " << this-> num_episodios << std::endl;
     std::cout << "Num temporadas: " << this-> num_temporadas << std::endl;
 }

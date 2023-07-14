@@ -13,7 +13,7 @@ void case1_peliculas(){
     std::cout << "Showing info" << std::endl;
     for(int i = 0; i < peliculas.size(); i++){
         std::cout << "Video " << i << std::endl;
-        peliculas[i].show_info();
+        peliculas[i].muestraDatos();
         std::cout << std::endl;
     }
 }
@@ -22,7 +22,7 @@ void case1_series(){
     std::cout << "Showing info" << std::endl;
     for(int i = 0; i < series.size(); i++){
         std::cout << "Video " << i << std::endl;
-        series[i].show_info();
+        series[i].muestraDatos();
         std::cout << std::endl;
     }
 }

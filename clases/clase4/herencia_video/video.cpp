@@ -20,7 +20,7 @@ Video :: Video(std::string type, std::string name, std::string genre, int launch
     this->duration = duration;
 }
 
-void Video :: show_info(){
+void Video :: muestraDatos(){
     std::cout << "Type: " << this->type << std::endl;
     std::cout << "Name: " << this->name << std::endl;
     std::cout << "Genre: " << this->genre << std::endl;
