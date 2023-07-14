@@ -15,7 +15,7 @@ Circle::~Circle()
     //dtor
 }
 
-string Circle::draw() const{
+string Circle::draw() {
     return "Soy un circulo";
 }
 
@@ -28,7 +28,7 @@ void Circle::setR(float r){
     this->r=r;
 }
 
-float Circle::getArea() const{
+float Circle::getArea(){
     return 3.1416*r*r;
 }
 

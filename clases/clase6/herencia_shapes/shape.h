@@ -19,7 +19,8 @@ class Shape
         Shape(int x, int y);
         virtual ~Shape();
 
-        string draw(); //Add virtual to make it polymorphic
+        virtual string draw(); //Add virtual to make it polymorphic
+        virtual float getArea();
 
         void setX(int x);
         void setY(int y);

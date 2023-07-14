@@ -32,7 +32,7 @@ void Triangulo::setAltura(float altura){
     this->altura=altura;
 }
 
-float Triangulo::getArea() const{
+float Triangulo::getArea(){
     return base*altura/2;
 }
 

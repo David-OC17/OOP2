@@ -41,3 +41,7 @@ Shape::~Shape()
 {
     //dtor
 }
+
+float Shape::getArea(){
+    return 0;
+}
