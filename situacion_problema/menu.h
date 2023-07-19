@@ -4,6 +4,8 @@
 #include "pelicula.h"
 #include "serie.h"
 
+void greeting();
+
 void case1_peliculas(std::vector<Pelicula> peliculas);
 
 void case1_series(std::vector<Serie> series);
