@@ -19,6 +19,7 @@ int main(){
     */
     peliculas_series database = database_reader();
 
+    greeting();
     menu(database.peliculas, database.series);
 
     return EXIT_SUCCESS;

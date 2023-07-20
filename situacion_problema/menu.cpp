@@ -29,6 +29,23 @@ void case1_series(std::vector<Serie> series){
     for(int i = 0; i < series.size(); i++){
         std::cout << "Serie " << i+1 << std::endl;
         series[i].muestraDatos();
+        std::cout << "Episodes " << std::endl;
+        series[i].muestraEpisodios();
+        std::cout << std::endl;
+    }
+    std::cout << "----------------------" << std::endl;
+}
+
+void case1_both(std::vector<Pelicula> peliculas, std::vector<Serie> series){
+    std::cout << "-----Showing info-----" << std::endl;
+    for(int i = 0; i < peliculas.size(); i++){
+        std::cout << "Movie " << i+1 << std::endl;
+        peliculas[i].muestraDatos();
+        std::cout << std::endl;
+    }
+    for(int i = 0; i < series.size(); i++){
+        std::cout << "Serie " << i+1 << std::endl;
+        series[i].muestraDatos();
         std::cout << std::endl;
     }
     std::cout << "----------------------" << std::endl;
@@ -65,7 +82,8 @@ void case2_series(std::vector<Serie> series){
 void case1(std::vector<Pelicula> peliculas, std::vector<Serie> series){
     std::cout << "1. Movies" << std::endl;
     std::cout << "2. Series" << std::endl;
-    std::cout << "3. Exit" << std::endl;
+    std::cout << "3. Both" << std::endl;
+    std::cout << "4. Exit" << std::endl;
 
     std::cout << "Choose an option: ";
     int option;
@@ -81,6 +99,10 @@ void case1(std::vector<Pelicula> peliculas, std::vector<Serie> series){
             case1_series(series);
             break;
         case 3:
+            std::cout << std::endl;
+            case1_both(peliculas, series);
+            break;
+        case 4:
             //Exit
             break;
         default:
@@ -117,7 +139,6 @@ void case2(std::vector<Pelicula> peliculas, std::vector<Serie> series){
 }
 
 bool menu(std::vector<Pelicula> peliculas, std::vector<Serie> series){
-    greeting();
     int option = 0;
 
     std::cout << "1. Show info" << std::endl;

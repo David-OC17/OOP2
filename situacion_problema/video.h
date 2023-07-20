@@ -5,9 +5,17 @@
 #include <string>
 
 class Video{
+    private:
+        std::string type;
+        std::string name;
+        std::string genre;
+        float grade;
+        int launch_year;
+        int duration;
+
     public:
         Video();
-        Video(std::string type, std::string name, std::string genre, int launch_year, int duration);
+        Video(std::string type, std::string name, std::string genre, int launch_year, int duration, float grade);
 
         virtual void muestraDatos();
 
@@ -15,7 +23,7 @@ class Video{
         std::string get_type();
         std::string get_name();
         std::string get_genre();
-        int get_grade();
+        float get_grade();
         int get_launch_year();
         int get_duration();
 
@@ -25,15 +33,7 @@ class Video{
         void set_launch_year(int launch_year);
         void set_duration(int duration);
         
-        void grade_video(int grade);
-
-    private:
-        std::string type;
-        std::string name;
-        std::string genre;
-        int grade;
-        int launch_year;
-        int duration;
+        void grade_video(float grade);
 };
 
 #endif // VIDEO_H

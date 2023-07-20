@@ -6,16 +6,20 @@
 class Episodio{
     private:
         std::string titulo;
-        std::string temporada;
+        int temporada;
+        int duracion;
     
     public:
         Episodio();
-        Episodio(std::string titulo, std::string temporada);
+        Episodio(std::string titulo, int temporada, int duracion);
 
         std::string getTitulo();
-        std::string getTemporada();
+        int getTemporada();
+        int getDuracion();
+        
         void setTitulo(std::string titulo);
-        void setTemporada(std::string temporada);
+        void setTemporada(int temporada);
+        void setDuracion(int duracion);
 
         void muestraDatos();
 };

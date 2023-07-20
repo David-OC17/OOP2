@@ -10,7 +10,7 @@ class Pelicula : public Video{
 
     public:
         Pelicula();
-        Pelicula(std::string name, std::string genre, int launch_year, int duration, std::string director);
+        Pelicula(std::string name, std::string genre, int launch_year, int duration, std::string director, float grade);
 
         std::string getDirector();
 

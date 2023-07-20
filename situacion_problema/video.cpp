@@ -6,16 +6,16 @@ Video :: Video(){
     this->type = "";
     this->name = "";
     this->genre = "";
-    this->grade = 0;
+    this->grade = 0.0;
     this->launch_year = 0;
     this->duration = 0;
 }
 
-Video :: Video(std::string type, std::string name, std::string genre, int launch_year, int duration){
+Video :: Video(std::string type, std::string name, std::string genre, int launch_year, int duration, float grade){
     this->type = type;
     this->name = name;
     this->genre = genre;
-    this->grade = 0;
+    this->grade = grade;
     this->launch_year = launch_year;
     this->duration = duration;
 }
@@ -29,7 +29,7 @@ void Video :: muestraDatos(){
     std::cout << "Duration: " << this->duration << std::endl;
 }
 
-void Video :: grade_video(int grade){
+void Video :: grade_video(float grade){
     this->grade = grade;
 }
 
@@ -45,7 +45,7 @@ std::string Video :: get_genre(){
     return this->genre;
 }
 
-int Video :: get_grade(){
+float Video :: get_grade(){
     return this->grade;
 }
 

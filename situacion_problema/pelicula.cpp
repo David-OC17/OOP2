@@ -5,7 +5,7 @@ Pelicula::Pelicula():Video(){
     director = "";
 }
 
-Pelicula::Pelicula(std::string name, std::string genre, int launch_year, int duration, std::string director) : Video("Pelicula", name, genre, launch_year, duration){
+Pelicula::Pelicula(std::string name, std::string genre, int launch_year, int duration, std::string director, float grade) : Video("Pelicula", name, genre, launch_year, duration, grade){
     this->director = director;
 }
 
