@@ -38,7 +38,7 @@ void Episodio::setDuracion(int duracion){
 }
 
 void Episodio::muestraDatos(){
-    std::cout << "Title: " << titulo << std::endl;
-    std::cout << "Season: " << temporada << std::endl;
-    std::cout << "Duration: " << duracion << std::endl;
+    std::cout << "  Title: " << titulo << std::endl;
+    std::cout << "  Season: " << temporada << std::endl;
+    std::cout << "  Duration: " << duracion << std::endl;
 }

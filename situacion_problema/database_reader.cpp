@@ -10,12 +10,10 @@
 //The format of each line of the csv file is:
 
 //example movie:
-//Movie,Inception,Action,2010,148,Christopher Nolan
+//Movie,Inception,Action,2010,148,Christopher Nolan.9.3
 
 //example serie:
-//Serie,Stranger Things,Drama,2016,51,1,8
-
-//This funciton returns a struct that contains two vectors, one with all the movies and another with all the series
+//Serie,Stranger Things,Drama,2016,51,1,8,8.8
 
 void set_episodes_to_series(std::vector<Serie> &series, std::vector<Episodio> &episodes){
     int episode_index = 0;
@@ -32,6 +30,8 @@ void set_episodes_to_series(std::vector<Serie> &series, std::vector<Episodio> &e
 peliculas_series database_reader(){
     std::vector<Pelicula> peliculas;
     std::vector<Serie> series;
+    std::vector<std::string> peliculas_names;
+    std::vector<std::string> series_names;
 
     std::ifstream Database;
     Database.open("database.csv");
@@ -68,6 +68,7 @@ peliculas_series database_reader(){
             grade = std::stof(row[6]);
             Pelicula pelicula(name, genre, year, duration, director, grade);
             peliculas.push_back(pelicula);
+            peliculas_names.push_back(name);
 
         }else if(row[0] == "Serie"){
             name = row[1];
@@ -78,6 +79,8 @@ peliculas_series database_reader(){
             grade = std::stof(row[6]);
             Serie serie(name, genre, year, season, num_episodes, grade);
             series.push_back(serie);
+            series_names.push_back(name);
+
         }else if(row[0] == "Episode"){
             name = row[1];
             duration = std::stoi(row[2]);
@@ -92,6 +95,8 @@ peliculas_series database_reader(){
     peliculas_series result;
     result.peliculas = peliculas;
     result.series = series;
-
+    result.peliculas_names = peliculas_names;
+    result.series_names = series_names;
+    
     return result;
 }

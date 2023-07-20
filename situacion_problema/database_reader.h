@@ -4,6 +4,8 @@
 struct peliculas_series{
     std::vector<Pelicula> peliculas;
     std::vector<Serie> series;
+    std::vector<std::string> peliculas_names;
+    std::vector<std::string> series_names;
 };
 
 peliculas_series database_reader();

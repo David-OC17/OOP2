@@ -37,6 +37,7 @@ void Serie::muestraDatos(){
     std::cout << "Num episodios: " << this-> num_episodios << std::endl;
     std::cout << "Num temporadas: " << this-> num_temporadas << std::endl;
     //Show the episodes of the series
+    std::cout << "Episodios: " << std::endl;
     for(int i = 0; i < episodios.size(); i++){
         episodios[i].muestraDatos();
     }
