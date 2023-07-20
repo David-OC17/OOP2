@@ -20,3 +20,6 @@ int main(){
 
 //Missing:
 //- Pass the vectors by reference, so the grades are saved
+//- Handle the case when the user enters a number that is not in the menu
+//- Handle the case when the user enters a string instead of a number
+//-Handle the case when the user enters a number that is not in the names vector

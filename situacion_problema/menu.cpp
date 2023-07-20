@@ -3,6 +3,7 @@
 
 #include "menu.h"
 
+//Helper functions
 void greeting(){
     std::cout << R"(
 ██     ██ ███████ ██       ██████  ██████  ███    ███ ███████     ████████  ██████       ██████ ██ ███    ██ ███████  ██████  ██████  ███    ██ ███████  ██████  ██      ███████ ██ 
@@ -20,6 +21,7 @@ void print_options(std::vector<std::string> &names){
     }
 }
 
+//Functions for showing info
 void case1_peliculas(std::vector<Pelicula> &peliculas){
     std::cout << "-----Showing info-----" << std::endl;
     for(int i = 0; i < peliculas.size(); i++){
@@ -55,20 +57,33 @@ void case1_both(std::vector<Pelicula> &peliculas, std::vector<Serie> &series){
     std::cout << "----------------------" << std::endl;
 }
 
+//Functions for grading
 void case2_peliculas(std::vector<Pelicula> &peliculas, std::vector<std::string> &peliculas_names){
     print_options(peliculas_names);
-    std::cout << "-------Grading--------" << std::endl;
-    std::cout << "Which movie do you want to grade?\n(Type the number of the movie in the list)\n";
-    int video_index;
-    std::cin >> video_index;
+    int video_index = 1;
+    int grade = 0;
+    try{
+        std::cout << "-------Grading--------" << std::endl;
+        std::cout << "Which movie do you want to grade?\n(Type the number of the movie in the list)\n";
+        std::cin >> video_index;
 
-    std::cout << "What grade do you want to give? \n";
-    int grade;
-    std::cin >> grade;
+        if (video_index > peliculas.size() || video_index < 0){
+            throw std::invalid_argument("Invalid movie");
+        }
 
-    video_index -= 1;
-    peliculas[video_index].grade_video(grade);
-    std::cout << "----------------------" << std::endl;
+        std::cout << "What grade do you want to give? \n";
+        std::cin >> grade;
+
+        if (grade > 10 || grade < 0){
+            throw std::invalid_argument("Invalid grade");
+        }
+
+        video_index -= 1;
+        peliculas[video_index].grade_video(grade);
+        std::cout << "----------------------" << std::endl;
+    } catch (std::invalid_argument &e){
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
 }
 
 void case2_series(std::vector<Serie> &series, std::vector<std::string> &series_names){
@@ -87,6 +102,7 @@ void case2_series(std::vector<Serie> &series, std::vector<std::string> &series_n
     std::cout << "----------------------" << std::endl;
 }
 
+//Cases
 void case1(std::vector<Pelicula> &peliculas, std::vector<Serie> &series, std::vector<std::string> &peliculas_names, std::vector<std::string> &series_names){
     std::cout << "1. Movies" << std::endl;
     std::cout << "2. Series" << std::endl;
@@ -146,6 +162,7 @@ void case2(std::vector<Pelicula> &peliculas, std::vector<Serie> &series, std::ve
     };
 }
 
+//Main menu
 bool menu(std::vector<Pelicula> &peliculas, std::vector<Serie> &series, std::vector<std::string> &peliculas_names, std::vector<std::string> &series_names){
     int option = 0;
 
@@ -173,7 +190,7 @@ bool menu(std::vector<Pelicula> &peliculas, std::vector<Serie> &series, std::vec
                 //Exit
                 break;
             default:
-                std::cout << "Invalid option" << std::endl;
+                std::cout << "Invalid option, choose again..." << std::endl;
                 break;
         };
     return true;
