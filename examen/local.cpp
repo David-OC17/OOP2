@@ -52,6 +52,7 @@ void Local::mostrarDatos() {
     std::cout << "Estacionamiento: " << (estacionamiento ? "Si" : "No") << std::endl;
     std::cout << "Almacenamiento: " << (almacenamiento ? "Si" : "No") << std::endl;
     std::cout << "Tipo: " << tipo << std::endl;
+    std::cout << std::endl;
 }
 
 void Local::precioVenta() {
