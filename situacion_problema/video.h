@@ -34,6 +34,7 @@ class Video{
         void set_duration(int duration);
         
         void grade_video(float grade);
+        Video operator+(float grade);
 };
 
 #endif // VIDEO_H

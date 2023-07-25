@@ -77,3 +77,11 @@ void Video :: set_duration(int duration){
     this->duration = duration;
 }
 
+Video Video :: operator+(float grade){
+    this->grade = grade + this->grade;
+    if (this->grade > 10){
+        throw std::invalid_argument("The grade can't be higher than 10");
+        this->grade = 10;
+    }
+    return *this;
+}
