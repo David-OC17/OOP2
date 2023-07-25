@@ -20,6 +20,7 @@ class Fraction{
         int get_numerator() const;
         int get_denominator() const;
         std::string get_fraction() const;
+        float get_decimal() const;
 
         //Setters
         void set_numerator(int numerator);

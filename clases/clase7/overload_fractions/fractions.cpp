@@ -18,6 +18,10 @@ std::string Fraction::get_fraction() const{
     return fraction;
 };
 
+float Fraction::get_decimal() const{
+    return (float)_numerator / (float)_denominator;
+};
+
 //Setters
 void Fraction::set_numerator(int numerator){
     _numerator = numerator;
@@ -102,10 +106,12 @@ void Fraction::check_negative_denominator(){
 };
 
 void Fraction::check_zero_denominator(){
+    try{
     if(_denominator == 0){
-        std::cout << "Error: Denominator cannot be zero" << std::endl;
-        exit(EXIT_FAILURE);
-    }
+        throw "Error: Denominator cannot be zero";
+    }} catch(const char* msg){
+        std::cerr << msg << std::endl;
+    };
 };
 
 //Overload operators (<,>,==)

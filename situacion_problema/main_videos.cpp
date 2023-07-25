@@ -1,6 +1,6 @@
 //David Ortiz Cota A01637391
 #include <iostream>
-#include<vector>
+#include <vector>
 
 #include "video.h"
 #include "pelicula.h"
@@ -19,7 +19,6 @@ int main(){
 }
 
 //Missing:
-//- Pass the vectors by reference, so the grades are saved
 //- Handle the case when the user enters a number that is not in the menu
 //- Handle the case when the user enters a string instead of a number
-//-Handle the case when the user enters a number that is not in the names vector
+//- Handle the case when the user enters a number that is not in the names vector

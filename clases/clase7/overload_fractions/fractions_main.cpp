@@ -25,5 +25,13 @@ int main(){
     std::cout << Fraction1.get_fraction() << " > " << Fraction2.get_fraction() << " = " << (Fraction1 > Fraction2) << std::endl;
     std::cout << Fraction1.get_fraction() << " == " << Fraction2.get_fraction() << " = " << (Fraction1 == Fraction2) << std::endl;
 
+    //Get fractions as decimals
+    std::cout << "Fractions as decimals:" << std::endl;
+    std::cout << Fraction1.get_fraction() << " = " << Fraction1.get_decimal() << std::endl;
+    std::cout << Fraction2.get_fraction() << " = " << Fraction2.get_decimal() << std::endl;
+
+    //Try creating a fraction with a zero denominator
+    Fraction Fraction3(1, 0);
+
     return EXIT_SUCCESS;
 };
